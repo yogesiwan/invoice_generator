@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE and editor folders and settings
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Coverage directory used by testing frameworks
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Build artifacts
+dist/
+build/
+
+# MongoDB data
+*.lock
+data/db/
+
+# Optional npm cache directory
+.npm/
+
+# Jest testing output
+jest-html-reporters-*

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .invoice-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .invoice-info div {
+            width: 48%; 
+            padding: 10px;
+        }
+        .invoice-info div:first-child {
+            border-right: 2px solid #ddd; 
+        }
+        .invoice-info div:nth-child(2) {
+            margin-left: 40px; 
+        }
+        .invoice-info p {
+            margin: 5px 0;
+        }
+        .table-container {
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            text-align: left;
+        }
+        td {
+            text-align: right;
+        }
+        td:nth-child(1) {
+            text-align: left;
+        }
+        td:nth-child(2), td:nth-child(3), td:nth-child(4) {
+            text-align: center; 
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invoice</h1>
+
+    <div class="invoice-info">
+        <div>
+            <h3>Seller:</h3>
+            <p> <%= seller %></p>
+            <p><%= sellerAddress %></p>
+            <p><strong>GSTIN:</strong> <%= sellerGstin %></p>
+        </div>
+        <div>
+            <h3>Buyer:</h3>
+            <p> <%= buyer %></p>        
+            <p><%= buyerAddress %></p>
+            <p><strong>GSTIN:</strong> <%= buyerGstin %></p>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% items.forEach(item => { %>
+                <tr>
+                    <td><%= item.name %></td>
+                    <td><%= item.quantity %></td>
+                    <td><%= item.rate.toFixed(2) %></td>
+                    <td><%= item.amount.toFixed(2) %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+    </div>
+</body>
+</html>
